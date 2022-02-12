@@ -1,0 +1,4 @@
+.env
+.env.test
+.npm
+node_modules/
