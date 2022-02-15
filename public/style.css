@@ -1,0 +1,98 @@
+.color{
+    /* background: #FFBBBB; */
+    /* background: #86C6F4; */
+    /* background: #ED5EDD; */
+    background:#8BDB81;
+}
+.container{
+    margin:0;
+}
+
+a{
+    color:black;
+}
+.header {
+    padding: 40px;
+    text-align: left;
+    color: rgb(0, 0, 0);
+    font-size: 35px;
+    font-weight: bold;
+    float: left;
+}
+
+.navbar{
+    /* background: #FFBBBB;   */
+    margin-bottom: 0; 
+}
+
+.header-left{
+    float: right;
+    padding: 40px;
+}
+
+.header-element{
+    float:left;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.heading{
+    color: black;
+    font-size: 70px;
+    font-weight: bold;
+    width: 30%;
+    padding: 40px;
+}
+
+.guide-heading{
+    margin-top: 40px;
+    padding: 25px;
+    padding-bottom: 10px;
+    color: black;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+hr { 
+    border-radius: 30px;
+    width: 40px;
+    border-width: 7px;
+    border-color:rgb(0, 110, 255);
+}
+
+.info-content{
+    padding: 25px;
+    margin: 40px 40px auto;
+    color:rgb(73, 85, 97);
+    font-size: 25px;   
+    text-align: center;
+}
+
+.info{
+    margin: 10px 20% 10px;
+    text-align: center;
+    border-radius: 29px;
+}
+
+.tutorial{
+    background-color: #f3f3f3d8;
+    margin: 10px 10% 10px;
+    text-align: center;
+    border-radius: 29px;
+}
+
+.tutorial-heading{
+    padding-top: 30px;
+    margin-bottom: 0px;
+    text-align: center;
+    font-size: 40px;
+}
+.tutorial-content{
+    padding: 25px;
+    margin: 0px 40px auto;
+    color:rgb(73, 85, 97);
+    font-size: 25px;   
+    text-align: center;
+}
