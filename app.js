@@ -12,9 +12,14 @@ app.get('/', function(req, res){
     res.render("home");
 })
 
-app.get('/templets' ,function(req, res){
-    res.render("templets");
+app.get('/templates' ,function(req, res){
+    res.render("templates");
 });
+
+app.get('/templates/:template', function(req, res){
+    const template = "templates/"+req.params.template;
+    res.render(template);
+})
 
 app.listen('3000', function(){
     console.log('listening on http://localhost:3000');

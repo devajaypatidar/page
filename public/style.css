@@ -30,6 +30,9 @@ a{
     padding: 40px;
 }
 
+.heading-container{
+    display: block;
+}
 .header-element{
     float:left;
     padding: 10px;
@@ -42,7 +45,15 @@ a{
     font-size: 70px;
     font-weight: bold;
     width: 30%;
-    padding: 40px;
+    padding: 60px;
+    padding-bottom: 150px;
+    
+}
+
+.heading-img{
+    width: 50%;
+    height: 50%;
+    float: right;
 }
 
 .guide-heading{
@@ -78,9 +89,10 @@ hr {
 
 .tutorial{
     background-color: #f3f3f3d8;
-    margin: 10px 10% 10px;
+    margin: 10px 10% 30px;
     text-align: center;
     border-radius: 29px;
+    
 }
 
 .tutorial-heading{
@@ -95,4 +107,24 @@ hr {
     color:rgb(73, 85, 97);
     font-size: 25px;   
     text-align: center;
+}
+
+
+.templates{
+    text-align: center;
+    margin-top: 40px;
+
+}
+
+.templates-img{
+    width: 30rem;
+    height: 30rem;
+    border-radius: 30px; 
+}
+
+
+p{
+    font-size:30px;
+    padding-top: 30px;
+    font-weight:bold;
 }
