@@ -2,7 +2,13 @@
     /* background: #FFBBBB; */
     /* background: #86C6F4; */
     /* background: #ED5EDD; */
-    background:#8BDB81;
+    /* background:#8BDB81; */
+    background:#f15affaf
+}
+
+body{
+    background-image: -webkit-linear-gradient(35deg, #A683E3 50%, #E4E9FD 50%);
+    background-image: radial-gradient(#EA52F8 5.66%, #0066FF 94.35%);
 }
 .container{
     margin:0;
@@ -87,9 +93,12 @@ hr {
     border-radius: 29px;
 }
 
+
+
 .tutorial{
-    background-color: #f3f3f3d8;
-    margin: 10px 10% 30px;
+    background-color: #f3f3f3b9;
+    margin: 30px 30px 30px ;
+    /* padding: 30px 30px 30px; */
     text-align: center;
     border-radius: 29px;
     
@@ -127,4 +136,24 @@ p{
     font-size:30px;
     padding-top: 30px;
     font-weight:bold;
+}
+
+.footer{
+    text-align:center;
+}
+
+
+
+@media only screen and (min-width: 1200px){
+    /*Tablets [601px -> 1200px]*/
+
+    .tut-container {
+        padding-left:60px;
+        margin-left:60px;
+    }
+
+    .why{
+        padding-left:60px;
+        margin-left:60px;
+    }
 }
