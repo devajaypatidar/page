@@ -5,11 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajay Patidar</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="favicon.ico">
+    
+    <!-- <link rel="icon" href="favicon.ico"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&family=Montserrat&family=Sacramento&family=Zen+Old+Mincho&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <style>
         
@@ -181,78 +183,87 @@ footer-link:hower{
 
 </head>
 <body>
-    <div class = "topContainer">
-        <img class = "topCloud" src="images/mountain/cloud.png" alt="">
-        <h1>I'am Ajay </h1>
-        <p><h2>A Full Stack web Developer</h2></p>
-        <img class="bottomCloud" src="images/mountain/cloud.png" alt="">
-        <img class = "mountain"src="images/mountain/mountain.png" alt="">
+
+    <div contenteditable="true" class = "topContainer">
+      <img class = "topCloud" src="/images/mountain/cloud.png" alt="">
+      <h1 id="Name">I'am Ajay </h1>
+      <p><h2 id="des">A Full Stack web Developer</h2></p>
+      <img class="bottomCloud" src="/images/mountain/cloud.png" alt="">
+      <img class = "mountain"src="/images/mountain/mountain.png" alt="">
+  </div>
+
+  <div  class="middleContainer">
+      <div class="profile">
+        <img class ="image-r" src="/images/mountain/ajay.jpg" alt="Ajay's Photo">
+        <h2>Hello.</h2>
+        <p contenteditable="true" class ="intro" >I am Web developer and Tech Enthusiast.</p>
+      </div>
+      <hr>
+      <div class="skills">
+        <h2>My Skills.</h2>
+        
+        <div contenteditable="true" class="skillBtn  skill-row">
+          <img class="code-img" src="/images/mountain/computer.png" alt="">
+          <h3 class="skill">Web development</h3>
+          <p class="skillDesc">HTML, CSS, Bootstrap, Javascript, Nodejs, Express, EJS and MondoDB.</p>
+        </div>
+        <button id="deleteSkill" class="btn btn-primary" >Delete Skill</button>
+        <Button id="addSkill"class="btn btn-primary">Add Skill</Button>
+
+      <div contenteditable="true" class="skills">
+        <h2>Technical Projects</h2>
+        <div class=" projectBtn skill-row">
+          <img class="code-img" src="/images/mountain/computer.png" alt="">
+          <h3 class="project">Portfolio Website Creator</h3>
+          <p class="projectDesc">Free Portfolio webpage creator webapp where anyone can edit and create their portfolio Website and Share with just one click.</p>
+        </div>
+        <div class="projectBtn skill-row">
+          <img class="chill-img" src="/images/mountain/Blog.jpg" alt="">
+          <h3 class="project">Blog website  </h3>
+          <p class="projectDesc" >A blog website created using nodejs,Expressjs,HTML,CSS,JavaScript,ejs and MongoDB</p>
+        </div>
+        <div class="projectBtn skill-row">
+          <img class="code-img" src="/images/mountain/to do list.png" alt="">
+          <h3 class="project">To-do List</a>  </h3>
+          <p class="projectDesc" >A interactive To-do List created using nodejs,Expressjs,HTML,CSS,JavaScript,ejs and MongoDB</p>
+        </div> 
+      </div>
+
+      <button id="deleteProject" class="btn btn-primary" >Delete Project</button>
+        <Button id="addProject"class="btn btn-primary">Add Project</Button>
+
+
+      <hr>
+      <div contenteditable="true" class="contact-me">
+        <h2>Get In Touch</h2>
+        <!-- <h3>If you want to get a website </h3> -->
+        <p id="ContactMsg">If you wanna get in touch, talk to me about a project collaboration or just say hi.</p>
+        <a class="btn" href="mailto:ajaypatidar2112@gmail.com">CONTACT ME</a>
+      </div>
+    </div>
+    
+    
+    <div class="bottomContainer">
+      <a class="footer-link" href="https://www.linkedin.com/in/ajay-patidar-3aa223217/">LinkedIn</a>
+      <a href="https://github.com/devajaypatidar">github</a>
+
+      <!-- <p>© Ajay Patidar.</p> -->
     </div>
 
-    <div class="middleContainer">
-        <div class="profile">
-          <img class ="image-r" src="images/mountain/ajay.jpg" alt="Ajay's Photo">
-          <h2>Hello.</h2>
-          <p class = "intro" >I am Web developer and Tech Enthusiast.</p>
-        </div>
-        <hr>
-        <div class="skills">
-          <h2>My Skills.</h2>
-          <div class="skill-row">
-            <img class="chill-img" src="images/mountain/Programming.png" alt="">
-            <h3>Programming</h3>
-            <p>Programming using Java(Core) and C.</p>
-          </div>
-          <div class="skill-row">
-            <img class="code-img" src="images/mountain/computer.png" alt="">
-            <h3>Web development</h3>
-            <p>HTML, CSS, Bootstrap, Javascript, Nodejs, Express, EJS and MondoDB.</p>
-          </div>
-          <div class="skill-row">
-            <img class="chill-img" src="images/mountain/chillies.png" alt="">
-            <h3>Music Production</h3>
-            <p>Make Electronic Dance Music .</p>
-          </div>
-        </div>
 
-        <div class="skills">
-          <h2>Technical Projects</h2>
-          <div class="skill-row">
-            <img class="code-img" src="images/mountain/computer.png" alt="">
-            <h3>Portfolio Website Creator</h3>
-            <p>Free Portfolio webpage creator webapp where anyone can edit and create their portfolio Website and Share with just one click.</p>
-          </div>
-          <div class="skill-row">
-            <img class="chill-img" src="images/mountain/Blog.jpg" alt="">
-            <h3><a href="https://serene-badlands-55814.herokuapp.com/">Blog website</a>  </h3>
-            <p>A blog website created using nodejs,Expressjs,HTML,CSS,JavaScript,ejs and MongoDB</p>
-          </div>
-          <div class="skill-row">
-            <img class="code-img" src="images/mountain/to do list.png" alt="">
-            <h3><a href="https://desolate-ravine-51253.herokuapp.com/">To-do List</a>  </h3>
-            <p>A interactive To-do List created using nodejs,Expressjs,HTML,CSS,JavaScript,ejs and MongoDB</p>
-          </div>
-        </div>
+    <form action="/mountains" method="post">
 
-        <hr>
-        <div class="contact-me">
-          <h2>Get In Touch</h2>
-          <!-- <h3>If you want to get a website </h3> -->
-          <p class="contact-msg">If you wanna get in touch, talk to me about a project collaboration or just say hi.</p>
-          <a class="btn" href="mailto:ajaypatidar2112@gmail.com">CONTACT ME</a>
-        </div>
-      </div>
-      
-      
-      <div class="bottomContainer">
-        <a class="footer-link" href="https://www.linkedin.com/in/ajay-patidar-3aa223217/">LinkedIn</a>
-        <a href="https://github.com/devajaypatidar">github</a>
+      <button type="submit">
+        
+        <div id="myBtn" class=" btn btn-lg btn-primary" type="submit"> Publish</div>
 
-        <p>© Ajay Patidar.</p>
-      </div>
-      
+      </button>
+    </form>
 
-    
+
+  <script   src="/js/mountains.js"></script>
+  
+
      
 </body>
 </html>
