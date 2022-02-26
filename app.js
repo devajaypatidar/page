@@ -8,6 +8,7 @@ const LocalStrategy = require('passport-local');
 const passportLocalMongoose = require('passport-local-mongoose');
 // const bcrypt  = require('bcrypt');
 // const saltRound = 10;
+let userId ;
 
 var session = require('express-session');
 
@@ -42,6 +43,7 @@ const UserSchema = new mongoose.Schema({
 
 const MountainSchema ={
     data: Object,
+    userId: String,
 }
 UserSchema.plugin(passportLocalMongoose)
 // UserSchema.plugin(findOrCreate);
@@ -94,26 +96,42 @@ app.get('/templates/:template', function(req, res){
 
 
 
-app.post('/mountains', function(req, res){
-    res.render('home');
-    
+app.post('/mountains/', function(req, res){
+    let username = req.session.username
+    res.redirect("/"+username+"/mountain");
 });
 
 app.post('/mountain/post',function(req, res){
-    const mountain = new Mountain({
-        data:req.body
-    })
 
-    mountain.save(function(err){
-        if(err)
-        {
+    User.findOne({username: req.session.username}, function (err, result) {
+        if (err){
             console.log(err);
         }
-        else
-        {
-            console.log("saved Securly");
+        else{
+            const mountain = new Mountain({
+                data:req.body,
+                userId: result._id,
+            })
+            mountain.save(function(err){
+                if(err)
+                {
+                    console.log(err);
+                }
+                else
+                {
+                    console.log("saved Securly");
+                }
+            })
+
+
         }
-    })
+    });
+
+    
+
+
+    
+    
 });
 
 
@@ -133,6 +151,8 @@ app.post('/login', (req, res) => {
         password : req.body.password,
     });
 
+    req.session.username = req.body.username;
+
     req.login(user,function(err){
         if(err){
             console.log(err);
@@ -148,6 +168,7 @@ app.post('/login', (req, res) => {
 
 app.post('/register', (req, res) => {
 
+    req.session.username = req.body.username;
     User.register({username: req.body.username} , req.body.password,function(err,user){
         if(err){
             console.log(err);
@@ -176,94 +197,33 @@ app.get('/logout', (req, res)=>{
     res.redirect('/');
 })
 
+app.get('/:username/mountain',function(req, res){
+    
+    User.findOne({username: req.params.username}, function (err, result) {
+        if (err){
+            console.log(err);
+        }
+        else{
+            Mountain.findOne({userid: result._id},function(err, result) {
+                if(err)
+                {
+                    console.log(err);
+                }
+                else
+                {
+                    
+                    res.render("templates/mountainscopy",{data: result.data});
+                }
+            })
+
+        }
+    });
+
+});
 
 
 
 
 app.listen('3000', function(){
     console.log('listening on http://localhost:3000');
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// app.post('/register', function(req, res){
-
-//     const username = req.body.username;
-//     const password = req.body.password;
-
-//     bcrypt.hash(password,saltRound,function(err,hash){
-
-
-//         const newUser = new User({
-//             email: username,
-//             password: hash,
-//         });
-    
-//         newUser.save(function(err){
-//             if(err) {
-//                 console.log(err);
-//             }else
-//             {
-//                 console.log("Registration Successful");
-//                 res.render('templates');
-//             }
-//         })
-
-//     })
-
-    
-// })
-
-// app.post('/login', function(req, res){
-
-
-
-
-
-
-
-
-//     const username = req.body.username;
-//     const password = req.body.password;
-
-//     User.findOne({email: username}, function(err, user){
-//         if(err) {
-//             console.log(err);
-//         }else
-//         {
-//             if(user)
-//             {
-//                 bcrypt.compare(password, user.password,function(err,result){
-//                     if(result){
-//                         console.log("login Successful ");
-//                         res.render("templates");
-//                     }
-//                 })   
-
-//             }
-//         }
-//     })
-// })
+});
