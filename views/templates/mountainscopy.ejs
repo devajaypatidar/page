@@ -184,7 +184,7 @@ footer-link:hower{
 </head>
 <body>
 
-    <div contenteditable="true" class = "topContainer">
+    <div class = "topContainer">
       <img class = "topCloud" src="/images/mountain/cloud.png" alt="">
       <h1 id="Name"><%=data.name %>   </h1>
       <p><h2 id="des"><%=data.desc %></h2></p>
@@ -196,7 +196,7 @@ footer-link:hower{
       <div class="profile">
         <img class ="image-r" src="/images/mountain/ajay.jpg" alt="Ajay's Photo">
         <h2>Hello.</h2>
-        <p contenteditable="true" class ="intro" > </p>
+        <p contenteditable="true" class ="intro" > <%= data.intro %>  </p>
       </div>
       <hr>
 
@@ -207,7 +207,7 @@ footer-link:hower{
 
         <% for(var i=0; i<data.skill.length; i++){ %>
 
-          <div contenteditable="true" class="skillBtn  skill-row">
+          <div  class="skillBtn  skill-row">
             <img class="code-img" src="/images/mountain/computer.png" alt="">
             <h3 class="skill"> <%= data.skill[i]  %>  </h3>
             <p class="skillDesc"> <%= data.skilldesc[i]%> </p>
@@ -218,7 +218,7 @@ footer-link:hower{
         <h2>Technical Projects</h2>
         <% for(var i=0; i<data.project.length; i++){ %>
           
-          <div contenteditable="true" class="skills">
+          <div class="skills">
           <div class=" projectBtn skill-row">
             <img class="code-img" src="/images/mountain/computer.png" alt="">
             <h3 class="project"><%= data.project[i] %>  </h3>
@@ -228,7 +228,7 @@ footer-link:hower{
         <% } %>
         
       <hr>
-      <div contenteditable="true" class="contact-me">
+      <div  class="contact-me">
         <h2>Get In Touch</h2>
         <!-- <h3>If you want to get a website </h3> -->
         <p id="ContactMsg"> <%= data.contact %></p>
@@ -245,14 +245,6 @@ footer-link:hower{
     </div>
 
 
-    <form action="/mountains" method="post">
-
-      <button type="submit">
-        
-        <div id="myBtn" class=" btn btn-lg btn-primary" type="submit"> Publish</div>
-
-      </button>
-    </form>
 
 
   <script   src="/js/mountains.js"></script>

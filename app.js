@@ -41,14 +41,14 @@ const UserSchema = new mongoose.Schema({
     password:String,
 })
 
-const MountainSchema ={
+const TemplateSchema ={
     data: Object,
     userId: String,
 }
 UserSchema.plugin(passportLocalMongoose)
 // UserSchema.plugin(findOrCreate);
 
-const Mountain = mongoose.model("Mountain",MountainSchema);
+const Template = mongoose.model("Template",TemplateSchema);
 const User = mongoose.model("User",UserSchema);
 
 
@@ -108,11 +108,11 @@ app.post('/mountain/post',function(req, res){
             console.log(err);
         }
         else{
-            const mountain = new Mountain({
+            const template = new Template({
                 data:req.body,
                 userId: result._id,
             })
-            mountain.save(function(err){
+            template.save(function(err){
                 if(err)
                 {
                     console.log(err);
@@ -183,14 +183,6 @@ app.post('/register', (req, res) => {
 });
 
 
-app.get('/secrets', (req, res)=>{
-    if(req.isAuthenticated()){
-        res.render('templates');
-    }else{
-        res.redirect('/');
-    }
-})
-
 
 app.get('/logout', (req, res)=>{
     req.logout();
@@ -198,20 +190,21 @@ app.get('/logout', (req, res)=>{
 })
 
 app.get('/:username/mountain',function(req, res){
-    
+    console.log(req.params.username);
     User.findOne({username: req.params.username}, function (err, result) {
         if (err){
             console.log(err);
         }
         else{
-            Mountain.findOne({userid: result._id},function(err, result) {
+            console.log(result._id);
+            Template.findOne({userId: result._id},function(err, result) {
                 if(err)
                 {
                     console.log(err);
                 }
                 else
-                {
-                    
+                { 
+                    console.log(result.userId);
                     res.render("templates/mountainscopy",{data: result.data});
                 }
             })

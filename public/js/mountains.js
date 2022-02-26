@@ -5,7 +5,7 @@ $("#myBtn").click(function () {
   let name = document.getElementById("Name").innerHTML;
   let des = document.getElementById("des").innerHTML;
   let projects = document.getElementsByClassName("project");
-  let intro = document.getElementsByClassName("intro").innerHTML;
+  let intro = document.getElementById("intro").innerHTML;
   let skill = document.getElementsByClassName("skill");
   let skillDesc = document.getElementsByClassName("skillDesc");
   let projectDesc = document.getElementsByClassName("projectDesc");
