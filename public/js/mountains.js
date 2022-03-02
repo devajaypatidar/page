@@ -10,6 +10,11 @@ $("#myBtn").click(function () {
   let skillDesc = document.getElementsByClassName("skillDesc");
   let projectDesc = document.getElementsByClassName("projectDesc");
   let contact = document.getElementById("ContactMsg").innerHTML;
+  let linkedin = document.getElementById("linkedin").innerHTML;
+  let github = document.getElementById("github").innerHTML;
+  let facebook = document.getElementById("facebook").innerHTML;
+  let twitter = document.getElementById("twitter").innerHTML;
+  let email = document.getElementById("email").innerHTML;
   const Url = "/mountain/post";
 
   let projectCount = Object.keys(projects).length;
@@ -52,6 +57,11 @@ $("#myBtn").click(function () {
     project:projectArray,
     projectDesc: projectDesArray,
     projectDesCount: projectDesCount,
+    email: email,
+    github: github,
+    linkedin: linkedin,
+    facebook: facebook,
+    twitter: twitter,
   };
 
   $.post(Url, data, function (data, status) {

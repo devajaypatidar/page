@@ -232,24 +232,32 @@ footer-link:hower{
         <h2>Get In Touch</h2>
         <!-- <h3>If you want to get a website </h3> -->
         <p id="ContactMsg"> <%= data.contact %></p>
-        <a class="btn" href="mailto:ajaypatidar2112@gmail.com">CONTACT ME</a>
+        <a class="btn" href="mailto:<%=data.email%>">CONTACT ME</a>
       </div>
     </div>
     
     
     <div class="bottomContainer">
-      <a class="footer-link" href="https://www.linkedin.com/in/ajay-patidar-3aa223217/">LinkedIn</a>
-      <a href="https://github.com/devajaypatidar">github</a>
+       <% if(data.linkedin!=null){ %>
+        <a class="footer-link" href="<%= data.linkedin%> ">LinkedIn</a>
+       <% } %>
 
-      <!-- <p>© Ajay Patidar.</p> -->
+       <% if(data.github!=null){ %>
+        <a class="footer-link" href="<%= data.github%> ">github</a>
+       <% } %>
+
+       <% if(data.facebook!=null){ %>
+        <a class="footer-link" href="<%= data.facebook%> ">facebook</a>
+       <% } %>
+
+       <% if(data.twitter!=null){ %>
+        <a class="footer-link" href="<%= data.twitter%> ">twitter</a>
+       <% } %>
+      
+      
+
+      <p>© <%=data.name%></p>
     </div>
 
-
-
-
-  <script   src="/js/mountains.js"></script>
-  
-
-     
 </body>
 </html>

@@ -474,8 +474,8 @@
 
         <div class="user">
             <img src="" alt="Ajay Patidar">
-            <h3 class="name">Ajay Patidar</h3>
-            <p class="post">front end developer</p>
+            <h3 id="name" class="name">Ajay Patidar</h3>
+            <p id="skill" class="post">front end developer</p>
         </div>
 
         <nav class="navbar">
@@ -517,33 +517,33 @@
         <div class="row">
 
             <div class="info">
-                <h3> <span> Name : </span> Ajay Patidar </h3>
-                <h3> <span> Age : </span> 20 </h3>
-                <h3> <span> Qualification : </span> B-Tech </h3>
-                <h3> <span> Work : </span> Web development </h3>
-                <h3> <span> Language : </span> English </h3>
-                <a href="#"><button class="btn"> download CV <i class="fas fa-download"></i> </button></a>
+                <h3> <span > Name : </span> Ajay Patidar </h3>
+                <h3> <span > Age : </span> <span id ="age" > 20 </span>  </h3>
+                <h3> <span > Qualification : </span> <span id=" course" > B-Tech </span> </h3>
+                <h3> <span > Work : </span>  <span id="work" >Web development</span> </h3>
+                <h3> <span> Language : </span> <span id="language" >English </span> </h3>
+                <!-- <a href="#"><button class="btn"> download CV <i class="fas fa-download"></i> </button></a> -->
             </div>
 
             <div class="counter">
 
                 <div class="box">
-                    <span>2+</span>
+                    <span id="exp" >2+</span>
                     <h3>years of experience</h3>
                 </div>
 
                 <div class="box">
-                    <span>100+</span>
+                    <span id="projectNumber" >100+</span>
                     <h3>porject completed</h3>
                 </div>
 
                 <div class="box">
-                    <span>430+</span>
+                    <span id="clients" >430+</span>
                     <h3>happy clients</h3>
                 </div>
 
                 <div class="box">
-                    <span>12+</span>
+                    <span id="award" >12+</span>
                     <h3>awards won</h3>
                 </div>
 
@@ -565,53 +565,18 @@
 
             <div class="box">
                 <i class="fas fa-graduation-cap"></i>
-                <span>2016</span>
-                <h3>front end development</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quos alias praesentium. Id autem
-                    provident laborum quae, distinctio eaque temporibus!</p>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-graduation-cap"></i>
-                <span>2017</span>
-                <h3>front end development</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quos alias praesentium. Id autem
-                    provident laborum quae, distinctio eaque temporibus!</p>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-graduation-cap"></i>
-                <span>2018</span>
-                <h3>front end development</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quos alias praesentium. Id autem
-                    provident laborum quae, distinctio eaque temporibus!</p>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-graduation-cap"></i>
-                <span>2019</span>
-                <h3>front end development</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quos alias praesentium. Id autem
-                    provident laborum quae, distinctio eaque temporibus!</p>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-graduation-cap"></i>
-                <span>2020</span>
-                <h3>front end development</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quos alias praesentium. Id autem
-                    provident laborum quae, distinctio eaque temporibus!</p>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-graduation-cap"></i>
-                <span>2021</span>
-                <h3>front end development</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quos alias praesentium. Id autem
+                <span class="educationYear" >2016</span>
+                <h3 class="education">front end development</h3>
+                <p class="educationDesc" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quos alias praesentium. Id autem
                     provident laborum quae, distinctio eaque temporibus!</p>
             </div>
 
         </div>
+
+        <button id="deleteProject" class="btn btn-primary" >Delete Project</button>
+        <Button id="addProject"class="btn btn-primary">Add Project</Button>
+
+
 
     </section>
 
@@ -633,7 +598,7 @@
                 <img src="images/img2.jpg" alt="">
             </div>
 
-            <div class="box">
+            <!-- <div class="box">
                 <img src="images/img3.jpg" alt="">
             </div>
 
@@ -647,7 +612,7 @@
 
             <div class="box">
                 <img src="images/img6.jpg" alt="">
-            </div>
+            </div> -->
 
         </div>
 
@@ -668,15 +633,14 @@
                 <h3 class="title">contact info</h3>
 
                 <div class="info">
-                    <h3> <i class="fas fa-envelope"></i> ritikfafriya123@gmail.com </h3>
-                    <h3> <i class="fas fa-phone"></i> 08839364901 </h3>
-                    <h3> <i class="fas fa-phone"></i>08602364901 </h3>
-                    <h3> <i class="fas fa-map-marker-alt"></i> Indore(M.P) ,India - 452001. </h3>
+                    <h3> <i class="fas fa-envelope"></i> <span id="email">ritikfafriya123@gmail.com </span> </h3>
+                    <h3> <i class="fas fa-phone"></i> <span id="phone"> 08839364901 </span> </h3>
+                    <h3> <i class="fas fa-map-marker-alt"></i> <span id="address">Indore(M.P) ,India - 452001.</span> </h3>
                 </div>
 
             </div>
 
-            <form action="">
+            <!-- <form action="">
 
                 <input type="text" placeholder="name" class="box">
                 <input type="email" placeholder="email" class="box">
@@ -684,7 +648,7 @@
                 <textarea name="" id="" cols="30" rows="10" class="box message" placeholder="message"></textarea>
                 <button type="submit" class="btn"> send <i class="fas fa-paper-plane"></i> </button>
 
-            </form>
+            </form> -->
 
         </div>
 

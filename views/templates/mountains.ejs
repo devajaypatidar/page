@@ -203,7 +203,12 @@ footer-link:hower{
         <h2>My Skills.</h2>
         
         <div contenteditable="true" class="skillBtn  skill-row">
-          <img class="code-img" src="/images/mountain/computer.png" alt="">
+          <h1>Upload Image</h1>
+        <form action="/uploadphoto" enctype="multipart/form-data" method="POST">
+          <input type="file" name="myImage" accept="image/*">
+          <input type="submit" value="Upload Photo">
+        </form>
+          <!-- <img class="code-img" src="/images/mountain/computer.png" alt=""> -->
           <h3 class="skill">Web development</h3>
           <p class="skillDesc">HTML, CSS, Bootstrap, Javascript, Nodejs, Express, EJS and MondoDB.</p>
         </div>
@@ -238,16 +243,21 @@ footer-link:hower{
         <h2>Get In Touch</h2>
         <!-- <h3>If you want to get a website </h3> -->
         <p id="ContactMsg">If you wanna get in touch, talk to me about a project collaboration or just say hi.</p>
-        <a class="btn" href="mailto:ajaypatidar2112@gmail.com">CONTACT ME</a>
+        <p class="btn" id="email">example123@gmail.com</p>
       </div>
     </div>
     
     
     <div class="bottomContainer">
-      <a class="footer-link" href="https://www.linkedin.com/in/ajay-patidar-3aa223217/">LinkedIn</a>
-      <a href="https://github.com/devajaypatidar">github</a>
-
-      <!-- <p>© Ajay Patidar.</p> -->
+      <h3>LinkedIn</h3>
+      <p contenteditable="true" id="linkedin">http://www.linkedin.com</p>
+      <h3>gitHub</h3>
+      <p contenteditable="true" id="github" >http://github.com</p>
+      <h3>facebook</h3>
+      <p contenteditable="true" id="facebook"> http://facebook.com</p> 
+      <h3>twitter</h3>
+      <p contenteditable="true" id="twitter"> http://twitter.com</p>
+      
     </div>
 
 
