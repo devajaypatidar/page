@@ -38,7 +38,6 @@ const UserSchema = new mongoose.Schema({
 
 const TemplateSchema = {
     data: Object,
-    userId: String,
 }
 UserSchema.plugin(passportLocalMongoose)
 // UserSchema.plugin(findOrCreate);
@@ -82,7 +81,7 @@ app.get('/templates/:template', function (req, res) {
         const template = "templates/" + req.params.template;
         res.render(template);
     } else {
-        res.render('options');
+        res.render('login');
     }
 
 
@@ -154,9 +153,6 @@ app.get('/login', function (req, res) {
     res.render('login');
 })
 
-app.get('/register', function (req, res) {
-    res.render('register');
-})
 
 
 app.post('/login', (req, res) => {
@@ -167,7 +163,6 @@ app.post('/login', (req, res) => {
     });
 
     req.session.username = req.body.username;
-
     req.login(user, function (err) {
         if (err) {
             console.log(err);
@@ -182,7 +177,6 @@ app.post('/login', (req, res) => {
 
 
 app.post('/register', (req, res) => {
-
     req.session.username = req.body.username;
     User.register({ username: req.body.username }, req.body.password, function (err, user) {
         if (err) {
@@ -197,6 +191,14 @@ app.post('/register', (req, res) => {
 
 });
 
+
+// app.get('/secrets', (req, res)=>{
+//     if(req.isAuthenticated()){
+//         res.render('templates');
+//     }else{
+//         res.redirect('/');
+//     }
+// })
 
 
 app.get('/logout', (req, res) => {
@@ -232,4 +234,4 @@ app.get('/:username/mountain', function (req, res) {
 
 app.listen('3000', function () {
     console.log('listening on http://localhost:3000');
-});
+})
