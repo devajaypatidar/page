@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+
 const app = express();
 const passport = require('passport');
 const passportLocalMongoose = require('passport-local-mongoose');
@@ -34,6 +35,7 @@ mongoose.connect('mongodb://localhost:27017/', {
 const UserSchema = new mongoose.Schema({
     email: String,
     password: String,
+    data:[Object],
 })
 
 const TemplateSchema = {
@@ -63,6 +65,9 @@ passport.deserializeUser(function (id, done) {
         done(err, user);
     });
 });
+
+
+
 
 
 app.get('/', function (req, res) {
@@ -95,6 +100,13 @@ app.post('/mountains/', function (req, res) {
         res.redirect("/" + username + "/mountain");
 });
 
+app.post('/dark', function (req, res) {
+    let username = req.session.username;
+        res.redirect("/" + username + "/dark");
+});
+
+// mountain js post route
+
 app.post('/mountain/post', function (req, res) {
     User.findOne({ username: req.session.username }, function (err, result) {
         if (err) {
@@ -102,6 +114,62 @@ app.post('/mountain/post', function (req, res) {
         }
         else {
 
+            Template.findOne({ userId: result._id }, function (err, results) {
+                if (results === null) {
+
+                    const template = new Template({
+                        data: req.body,
+                        userId: result._id,
+                    })
+                    template.save(function (err) {
+                        if (err) {
+                            console.log(err);
+                        }
+                        else {
+                            console.log("saved Securly");
+                        }
+                    })
+
+                }
+                else
+                {
+                    Template.findOneAndUpdate({userId: result._id}
+
+                    , {$set: {data: req.body}}
+                    
+                    , function (err, doc) {
+                    
+                        if (err) {
+                    
+                            console.log("update document error");
+                    
+                        } else {
+                    
+                            console.log("update document success");
+            
+                        }
+                    
+                    });
+
+                }
+            });
+
+
+        }
+    });
+
+});
+
+
+//dark js Post route
+
+app.post('/dark/post', function (req, res) {
+    User.findOne({ username: req.session.username }, function (err, result) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            console.log("user Found");
             Template.findOne({ userId: result._id }, function (err, results) {
                 if (results === null) {
 
@@ -228,6 +296,30 @@ app.get('/:username/mountain', function (req, res) {
     });
 
 });
+
+app.get('/:username/dark', function (req, res) {
+    // console.log(req.params.username);
+    User.findOne({ username: req.params.username }, function (err, result) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            // console.log(result._id);
+            Template.findOne({ userId: result._id }, function (err, result) {
+                if (err) {
+                    console.log(err);
+                }
+                else {
+                    // console.log(result.userId);
+                    res.render("templates/darkcopy", { data: result.data });
+                }
+            })
+
+        }
+    });
+
+});
+
 
 
 

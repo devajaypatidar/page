@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajay Patidar</title>
+    <title> <%= data.name%></title>
     
     <!-- <link rel="icon" href="favicon.ico"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -186,7 +186,7 @@ footer-link:hower{
 
     <div class = "topContainer">
       <img class = "topCloud" src="/images/mountain/cloud.png" alt="">
-      <h1 id="Name"><%=data.name %>   </h1>
+      <h1 id="Name"> <%=data.name %> </h1>
       <p><h2 id="des"><%=data.desc %></h2></p>
       <img class="bottomCloud" src="/images/mountain/cloud.png" alt="">
       <img class = "mountain"src="/images/mountain/mountain.png" alt="">
@@ -194,9 +194,9 @@ footer-link:hower{
 
   <div  class="middleContainer">
       <div class="profile">
-        <img class ="image-r" src="/images/mountain/ajay.jpg" alt="Ajay's Photo">
+        <!-- <img class ="image-r" src="/images/mountain/ajay.jpg" alt="Ajay's Photo"> -->
         <h2>Hello.</h2>
-        <p contenteditable="true" class ="intro" > <%= data.intro %>  </p>
+        <p  class ="intro" > <%= data.intro %>  </p>
       </div>
       <hr>
 
@@ -232,7 +232,7 @@ footer-link:hower{
         <h2>Get In Touch</h2>
         <!-- <h3>If you want to get a website </h3> -->
         <p id="ContactMsg"> <%= data.contact %></p>
-        <a class="btn" href="mailto:<%=data.email%>">CONTACT ME</a>
+        <a class="btn" href="mailto:<%=data.email%>">Email ME</a>
       </div>
     </div>
     
@@ -254,9 +254,7 @@ footer-link:hower{
         <a class="footer-link" href="<%= data.twitter%> ">twitter</a>
        <% } %>
       
-      
-
-      <p>© <%=data.name%></p>
+    
     </div>
 
 </body>

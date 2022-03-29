@@ -1,7 +1,7 @@
 
 
 $("#myBtn").click(function () {
-  
+
   let name = document.getElementById("Name").innerHTML;
   let des = document.getElementById("des").innerHTML;
   let projects = document.getElementsByClassName("project");
@@ -19,30 +19,26 @@ $("#myBtn").click(function () {
 
   let projectCount = Object.keys(projects).length;
   let projectArray = [];
-  for(var i = 0; i < projectCount; i++)
-  {
+  for (var i = 0; i < projectCount; i++) {
     projectArray[i] = projects[i].innerHTML;
   }
 
 
   let projectDesCount = Object.keys(projectDesc).length;
   let projectDesArray = [];
-  for(var i = 0; i < projectDesCount; i++)
-  {
-    projectDesArray[i]= projectDesc[i].innerHTML;
+  for (var i = 0; i < projectDesCount; i++) {
+    projectDesArray[i] = projectDesc[i].innerHTML;
   }
 
   let skilCount = Object.keys(skill).length;
   let skillArray = [];
-  for(var i = 0; i < skilCount; i++)
-  {
-    skillArray[i]= skill[i].innerHTML;
+  for (var i = 0; i < skilCount; i++) {
+    skillArray[i] = skill[i].innerHTML;
   }
 
   let skillDescCount = Object.keys(skillDesc).length;
   let skillDesArray = [];
-  for(var i = 0; i < skillDescCount; i++)
-  {
+  for (var i = 0; i < skillDescCount; i++) {
     skillDesArray[i] = skillDesc[i].innerHTML;
   }
 
@@ -52,9 +48,9 @@ $("#myBtn").click(function () {
     intro: intro,
     skill: skillArray,
     skilldesc: skillDesArray,
-    contact:contact,
+    contact: contact,
     projectCount: projectCount,
-    project:projectArray,
+    project: projectArray,
     projectDesc: projectDesArray,
     projectDesCount: projectDesCount,
     email: email,
@@ -68,25 +64,29 @@ $("#myBtn").click(function () {
     console.log("Post is done ");
   });
 
+
+
+
 });
 
 
 $('#addSkill').click(function () {
 
-var elem = document.querySelector('.skillBtn');
+  var elem = document.querySelector('.skillBtn');
 
-// Create a copy of it
-var clone = elem.cloneNode(true);
-// Inject it into the DOM
-elem.after(clone);
+  // Create a copy of it
+  var clone = elem.cloneNode(true);
+  // Inject it into the DOM
+  elem.after(clone);
+ 
 });
 
-$('#deleteSkill').click(function(e) {
+$('#deleteSkill').click(function (e) {
   var element = document.querySelector('.skillBtn');
   element.remove();
 })
 
-$('#addProject').click(function(e) {
+$('#addProject').click(function (e) {
 
   var elem = document.querySelector('.projectBtn');
 
@@ -95,7 +95,7 @@ $('#addProject').click(function(e) {
 
 })
 
-$('#deleteProject').click(function(e){
+$('#deleteProject').click(function (e) {
   var element = document.querySelector('.projectBtn');
   element.remove();
 });

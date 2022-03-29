@@ -76,12 +76,13 @@ a{
     text-align: center;
 }
 
-hr { 
+/* hr{ 
     border-radius: 30px;
     width: 40px;
     border-width: 7px;
     border-color:rgb(0, 110, 255);
-}
+    text-align: center;
+} */
 
 .info-content{
     padding: 25px;

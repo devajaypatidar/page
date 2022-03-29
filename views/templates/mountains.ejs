@@ -179,6 +179,12 @@ footer-link:hower{
   background-image: linear-gradient(to bottom, #8032c9, #a921b0);
   text-decoration: none;
 }
+
+#intro{
+  padding-bottom: 40px;
+}
+
+
     </style>
 
 </head>
@@ -193,25 +199,24 @@ footer-link:hower{
   </div>
 
   <div  class="middleContainer">
+
+    <h2>Hello.</h2>
+    <p contenteditable="true" id="intro" >I am Web developer and Tech Enthusiast.</p>
+    
+    <!-- <h4>Upload Image</h4> -->
       <div class="profile">
-        <img class ="image-r" src="/images/mountain/ajay.jpg" alt="Ajay's Photo">
-        <h2>Hello.</h2>
-        <p contenteditable="true" id="intro" >I am Web developer and Tech Enthusiast.</p>
-      </div>
+        <!-- <img class ="image-r" src="/images/mountain/ajay.jpg" alt="Ajay's Photo"> -->
+        <h2>My Skills.</h2>
+        <div  class="skillBtn  skill-row">
+          <img class="code-img" src="/images/mountain/programming.png" alt="">
+          <h3 contenteditable="true" class="skill">Skill Name </h3>
+          <p contenteditable="true" class="skillDesc">Skill Desc. like HTML, CSS, Bootstrap, Javascript, Nodejs, Express, EJS and MondoDB.</p>
+        
+        </div>
       <hr>
       <div class="skills">
-        <h2>My Skills.</h2>
         
-        <div contenteditable="true" class="skillBtn  skill-row">
-          <h1>Upload Image</h1>
-        <form action="/uploadphoto" enctype="multipart/form-data" method="POST">
-          <input type="file" name="myImage" accept="image/*">
-          <input type="submit" value="Upload Photo">
-        </form>
-          <!-- <img class="code-img" src="/images/mountain/computer.png" alt=""> -->
-          <h3 class="skill">Web development</h3>
-          <p class="skillDesc">HTML, CSS, Bootstrap, Javascript, Nodejs, Express, EJS and MondoDB.</p>
-        </div>
+        
         <button id="deleteSkill" class="btn btn-primary" >Delete Skill</button>
         <Button id="addSkill"class="btn btn-primary">Add Skill</Button>
 
@@ -219,10 +224,10 @@ footer-link:hower{
         <h2>Technical Projects</h2>
         <div class=" projectBtn skill-row">
           <img class="code-img" src="/images/mountain/computer.png" alt="">
-          <h3 class="project">Portfolio Website Creator</h3>
-          <p class="projectDesc">Free Portfolio webpage creator webapp where anyone can edit and create their portfolio Website and Share with just one click.</p>
+          <h3 class="project"> project Title : Portfolio Website Creator</h3>
+          <p class="projectDesc">project Desc : Free Portfolio webpage creator webapp where anyone can edit and create their portfolio Website and Share with just one click.</p>
         </div>
-        <div class="projectBtn skill-row">
+        <!-- <div class="projectBtn skill-row">
           <img class="chill-img" src="/images/mountain/Blog.jpg" alt="">
           <h3 class="project">Blog website  </h3>
           <p class="projectDesc" >A blog website created using nodejs,Expressjs,HTML,CSS,JavaScript,ejs and MongoDB</p>
@@ -231,7 +236,7 @@ footer-link:hower{
           <img class="code-img" src="/images/mountain/to do list.png" alt="">
           <h3 class="project">To-do List</a>  </h3>
           <p class="projectDesc" >A interactive To-do List created using nodejs,Expressjs,HTML,CSS,JavaScript,ejs and MongoDB</p>
-        </div> 
+        </div>  -->
       </div>
 
       <button id="deleteProject" class="btn btn-primary" >Delete Project</button>
@@ -242,8 +247,8 @@ footer-link:hower{
       <div contenteditable="true" class="contact-me">
         <h2>Get In Touch</h2>
         <!-- <h3>If you want to get a website </h3> -->
-        <p id="ContactMsg">If you wanna get in touch, talk to me about a project collaboration or just say hi.</p>
-        <p class="btn" id="email">example123@gmail.com</p>
+        <p id="ContactMsg"> Contact Message: If you wanna get in touch, talk to me about a project collaboration or just say hi.</p>
+        <p class="btn" id="email">Email : example123@gmail.com</p>
       </div>
     </div>
     
@@ -271,9 +276,8 @@ footer-link:hower{
     </form>
 
 
-  <script   src="/js/mountains.js"></script>
-  
-
+  <script  src="/js/mountains.js"></script>
+  <!-- <script type="module" src="/js/profilephoto.cjs"></script> -->
      
 </body>
 </html>
