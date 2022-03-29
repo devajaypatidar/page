@@ -35,11 +35,11 @@ mongoose.connect('mongodb://localhost:27017/', {
 const UserSchema = new mongoose.Schema({
     email: String,
     password: String,
-    data:[Object],
 })
 
 const TemplateSchema = {
     data: Object,
+    userId: String,
 }
 UserSchema.plugin(passportLocalMongoose)
 // UserSchema.plugin(findOrCreate);
@@ -100,7 +100,7 @@ app.post('/mountains/', function (req, res) {
         res.redirect("/" + username + "/mountain");
 });
 
-app.post('/dark', function (req, res) {
+app.post('/dark/', function (req, res) {
     let username = req.session.username;
         res.redirect("/" + username + "/dark");
 });
@@ -113,10 +113,10 @@ app.post('/mountain/post', function (req, res) {
             console.log(err);
         }
         else {
-
+            
             Template.findOne({ userId: result._id }, function (err, results) {
-                if (results === null) {
-
+                
+                if (results == null) {
                     const template = new Template({
                         data: req.body,
                         userId: result._id,
@@ -133,6 +133,7 @@ app.post('/mountain/post', function (req, res) {
                 }
                 else
                 {
+                    console.log("updating template");
                     Template.findOneAndUpdate({userId: result._id}
 
                     , {$set: {data: req.body}}
@@ -164,6 +165,7 @@ app.post('/mountain/post', function (req, res) {
 //dark js Post route
 
 app.post('/dark/post', function (req, res) {
+    console.log("posting in dark")
     User.findOne({ username: req.session.username }, function (err, result) {
         if (err) {
             console.log(err);
@@ -171,8 +173,8 @@ app.post('/dark/post', function (req, res) {
         else {
             console.log("user Found");
             Template.findOne({ userId: result._id }, function (err, results) {
-                if (results === null) {
-
+                if (results == null) {
+                    console.log("new dark template is creatnng")
                     const template = new Template({
                         data: req.body,
                         userId: result._id,
@@ -189,6 +191,7 @@ app.post('/dark/post', function (req, res) {
                 }
                 else
                 {
+                    console.log("updating previous")
                     Template.findOneAndUpdate({userId: result._id}
 
                     , {$set: {data: req.body}}
@@ -200,7 +203,7 @@ app.post('/dark/post', function (req, res) {
                             console.log("update document error");
                     
                         } else {
-                    
+                            
                             console.log("update document success");
             
                         }
@@ -310,7 +313,7 @@ app.get('/:username/dark', function (req, res) {
                     console.log(err);
                 }
                 else {
-                    // console.log(result.userId);
+                    console.log(result);
                     res.render("templates/darkcopy", { data: result.data });
                 }
             })

@@ -496,7 +496,7 @@
     <!-- home section starts  -->
 
     <section class="home" id="home">
-        <div contenteditable="true">
+        <div >
             <h3>HI THERE !</h3>
             <h1>I'M <span ><%=data.name %></span></h1>
         </div>
@@ -533,7 +533,7 @@
                 </div>
 
                 <div class="box">
-                    <span id="projectNumber" ><%=data.projectComplted %></span>
+                    <span id="projectNumber" ><%=data.projectCompleted %></span>
                     <h3>porject completed</h3>
                 </div>
 
@@ -563,18 +563,18 @@
 
         <div class="box-container">
 
-            <% for(var i=0; i<data.educationArray.length; i++){ %>
+            <% for(var i=0; i<data.education.length; i++){ %>
             <div class="box">
                 <i class="fas fa-graduation-cap"></i>
-                <span class="educationYear" ><%=data.educationYearArray[i] %> </span>
-                <h3 class="education"><%= data.educationArray[i] %></h3>
-                <p class="educationDesc" ><%= data.educationDescArray[i] %></p>
+                <span class="educationYear" ><%=data.educationYear[i] %> </span>
+                <h3 class="education"><%= data.education[i] %></h3>
+                <p class="educationDesc" ><%= data.educationDesc[i] %></p>
             </div>
             <% } %>        
         </div>
 
-        <Button id="addEducation"class="btn btn-primary"> Add Education</Button>
-        <button id="deleteEducation" class="btn btn-primary" >Delete Education</button>
+        <!-- <Button id="addEducation"class="btn btn-primary"> Add Education</Button>
+        <button id="deleteEducation" class="btn btn-primary" >Delete Education</button> -->
 
 
 
@@ -589,21 +589,21 @@
         <h1 class="heading"> my <span>Projects</span> </h1>
 
         <div class="box-container">
-            <% for(var i=0; i<data.projectArray.length; i++){ %>
+            <% for(var i=0; i<data.project.length; i++){ %>
 
             <div class="box">
                 <i class="fas"></i>
                 <!-- <span class="educationYear" >2016</span> -->
-                <h3 class="projectname"><%=data.projectArray[i] %></h3>
-                <p class="projectDesc" ><%=data.projectDescArray[i] %></p>
+                <h3 class="projectname"><%=data.project[i] %></h3>
+                <p class="projectDesc" ><%=data.projectDesc[i] %></p>
             </div>
 
             <% } %>
         </div>
 
-        <Button id="addProject"class="btn btn-primary">Add project</Button>
+        <!-- <Button id="addProject"class="btn btn-primary">Add project</Button>
         <button id="deleteProject" class="btn btn-primary" >Delete Project</button>
-
+ -->
 
 
     </section>
@@ -646,14 +646,14 @@
     </a>
 
 
-    <form action="/dark" method="post">
+    <!-- <form action="/dark" method="post">
 
         <button type="submit">
           
           <div id="myBtn" class=" btn btn-lg btn-primary" type="submit"> Publish</div>
   
         </button>
-      </form>
+      </form> -->
 
 
     <!-- jquery cdn link  -->
