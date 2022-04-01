@@ -6,10 +6,10 @@
     background:#f15affaf
 }
 
-body{
+/* body{
     background-image: -webkit-linear-gradient(35deg, #A683E3 50%, #E4E9FD 50%);
     background-image: radial-gradient(#EA52F8 5.66%, #0066FF 94.35%);
-}
+} */
 .container{
     margin:0;
 }

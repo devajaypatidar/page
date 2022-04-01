@@ -325,6 +325,12 @@ app.get('/:username/dark', function (req, res) {
 
 
 
+app.get("/index", function (req, res) {
+    res.sendFile(__dirname + "/index.html")
+})
+
+
+
 
 
 app.listen('3000', function () {
